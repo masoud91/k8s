@@ -1,0 +1,3 @@
+# create a deployment using file
+kubectl create -f deployment-definition.yml
+
