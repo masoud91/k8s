@@ -10,4 +10,4 @@ metadata:
 spec:
   containers:
     - name: ngnix-container
-      image: ngnix
+      image: nginx
