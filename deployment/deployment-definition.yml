@@ -11,7 +11,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: myapp
+      name: myapp-pod
 
     spec:
       containers:
