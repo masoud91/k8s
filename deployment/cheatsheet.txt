@@ -1,5 +1,23 @@
-# create a replicaset using file
-kubectl create -f replicaset-definition.yml
+# create a deployment using file
+kubectl create -f deployment-definition.yml
 
-# scale replicas to 4
-kubectl scale --replicas=4 -f replicaset-definition.yml
+# rollout status
+kubectl rollout status deployment/myapp-deployment
+
+# rollout history
+kubectl rollout history deployment/myapp-deployment
+
+# update an app using configuration file
+# where we change the container tag for example: ngnix:1.7 => ngnix:1.8
+kubectl apply -f deployment-definition.yml
+
+# update an app using set command
+# this doesn't perform any changes to file so we should be aware that our configuration file setting is differ from
+# our environment
+kubectl set image deployment/myapp-deployment nginx=nginx:1.8
+
+# back to a previous deployed version
+kubectl rollout undo deployment/myapp-deployment
+
+# record revisions and changes
+kubectl create -f deployment/deployment-definition.yml  --record

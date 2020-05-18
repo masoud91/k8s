@@ -1,3 +1,5 @@
-# create a deployment using file
-kubectl create -f deployment-definition.yml
+# create a replicaset using file
+kubectl create -f replicaset-definition.yml
 
+# scale replicas to 4
+kubectl scale --replicas=4 -f replicaset-definition.yml
