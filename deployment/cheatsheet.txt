@@ -9,7 +9,7 @@ kubectl rollout history deployment/myapp-deployment
 
 # update an app using configuration file
 # where we change the container tag for example: ngnix:1.7 => ngnix:1.8
-kubectl apply -f deployment-definition.yml
+kubectl apply -f deployment-definition.yml --record
 
 # update an app using set command
 # this doesn't perform any changes to file so we should be aware that our configuration file setting is differ from
